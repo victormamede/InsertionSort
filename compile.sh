@@ -1,0 +1,1 @@
+gcc src/*.c -Wall -o dist/main $(sdl2-config --cflags --libs)
