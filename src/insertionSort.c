@@ -1,12 +1,12 @@
-#include <SDL2/SDL.h>
+#include <stdbool.h>
 #include "data.h"
 
-SDL_bool insertionSort(Data *data)
+bool insertionSort(Data *data)
 {
   if (data->currentIndex >= data->length)
   {
     data->lastSwappedIndex = -1;
-    return SDL_TRUE;
+    return true;
   }
 
   int i;
@@ -25,5 +25,5 @@ SDL_bool insertionSort(Data *data)
 
   data->lastSwappedIndex = i;
   data->currentIndex++;
-  return SDL_FALSE;
+  return false;
 }
