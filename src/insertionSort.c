@@ -1,12 +1,12 @@
+#include <SDL2/SDL.h>
 #include "data.h"
 
-void insertionSort(Data *data)
+SDL_bool insertionSort(Data *data)
 {
   if (data->currentIndex >= data->length)
   {
-    data->currentIndex = -1;
     data->lastSwappedIndex = -1;
-    return;
+    return SDL_TRUE;
   }
 
   int i;
@@ -20,8 +20,10 @@ void insertionSort(Data *data)
     int tmp = data->values[i - 1];
     data->values[i - 1] = data->values[i];
     data->values[i] = tmp;
+    data->swapsMade++;
   }
 
   data->lastSwappedIndex = i;
   data->currentIndex++;
+  return SDL_FALSE;
 }

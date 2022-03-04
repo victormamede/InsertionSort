@@ -1,3 +1,4 @@
+#include <SDL2/SDL.h>
 #include "data.h"
 
-void insertionSort(Data *data);
+SDL_bool insertionSort(Data *data);

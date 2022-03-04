@@ -7,7 +7,7 @@
 Data *generateData()
 {
   int length;
-  printf("Digite a quantidade de números que deseja colocar: ");
+  printf("Enter the amount of numbers to create: ");
   scanf("%d", &length);
 
   int *values = calloc(length, sizeof(int));
@@ -23,6 +23,7 @@ Data *generateData()
   toReturn->values = values;
   toReturn->lastSwappedIndex = -1;
   toReturn->currentIndex = -1;
+  toReturn->swapsMade = 0;
 
   return toReturn;
 }

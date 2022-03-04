@@ -15,6 +15,9 @@ int main(int argc, char *args[])
 {
   Data *data = generateData();
 
+  printf("Unordered list: ");
+  printData(data);
+
   srand(time(NULL));
   SDL_Window *window = NULL;
 
@@ -56,7 +59,13 @@ int main(int argc, char *args[])
         switch (e.key.keysym.sym)
         {
         case SDLK_SPACE:
-          insertionSort(data);
+          SDL_bool sorted = insertionSort(data);
+          if (sorted)
+          {
+            SDL_Log("Finished sorting with %d swaps", data->swapsMade);
+            printf("Ordered list: ");
+            printData(data);
+          }
           break;
         default:
           break;
