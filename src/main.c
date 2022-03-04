@@ -13,12 +13,12 @@
 
 int main(int argc, char *args[])
 {
+  srand(time(NULL));
   Data *data = generateData();
 
   printf("Unordered list: ");
   printData(data);
 
-  srand(time(NULL));
   SDL_Window *window = NULL;
 
   if (SDL_Init(SDL_INIT_VIDEO) < 0)
